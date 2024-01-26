@@ -93,18 +93,56 @@
 //	}
 //}
 
-[Some(new int[] { 1, 2, 3 })]
-public class SomeClass
+//[Some(new int[] { 1, 2, 3 })]
+//public class SomeClass
+//{
+
+//}
+
+//public class SomeAttribute : Attribute
+//{
+//	public SomeAttribute(int[] numbers)
+//	{
+//		Numbers = numbers;
+//	}
+
+//	public int[] Numbers { get; }
+//}
+
+var point = new Point(1, 3);
+var anotherPoint = point;
+anotherPoint.Y = 100;
+
+Console.WriteLine("point is: " + point);
+Console.WriteLine("anotherPoint is: " + anotherPoint);
+
+SomeMethod(5);
+SomeMethod(new Person());
+
+Console.ReadKey();
+
+void SomeMethod<T>(T param) where T : class
 {
 
 }
 
-public class SomeAttribute : Attribute
+struct Point
 {
-	public SomeAttribute(int[] numbers)
+	public int X { get; set; }
+	public int Y { get; set; }
+
+	public Point(int x, int y)
 	{
-		Numbers = numbers;
+		X = x;
+		Y = y;
 	}
 
-	public int[] Numbers { get; }
+	public override string ToString() => $"X: {X}, Y: {Y}";
+}
+
+
+class Person
+{
+	public int Id { get; init; }
+	public string Name { get; init; }
 }
