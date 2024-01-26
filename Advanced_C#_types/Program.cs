@@ -109,22 +109,24 @@
 //	public int[] Numbers { get; }
 //}
 
-var point = new Point(1, 3);
-var anotherPoint = point;
-anotherPoint.Y = 100;
+//var point = new Point(1, 3);
+//var anotherPoint = point;
+//anotherPoint.Y = 100;
 
-Console.WriteLine("point is: " + point);
-Console.WriteLine("anotherPoint is: " + anotherPoint);
+//Console.WriteLine("point is: " + point);
+//Console.WriteLine("anotherPoint is: " + anotherPoint);
 
-SomeMethod(5);
-SomeMethod(new Person());
+//SomeMethod(5);
+//SomeMethod(new Person());
 
+//Point nullPoint = null;
+Person person = new Person();
 Console.ReadKey();
 
-void SomeMethod<T>(T param) where T : class
-{
+//void SomeMethod<T>(T param) where T : class
+//{
 
-}
+//}
 
 struct Point
 {
@@ -138,11 +140,16 @@ struct Point
 	}
 
 	public override string ToString() => $"X: {X}, Y: {Y}";
+
+
 }
+
 
 
 class Person
 {
+	private Point _favoritePoint;
+	private Person _favoritePerson;
 	public int Id { get; init; }
 	public string Name { get; init; }
 }
