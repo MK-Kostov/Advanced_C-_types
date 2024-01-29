@@ -120,7 +120,9 @@
 //SomeMethod(new Person());
 
 //Point nullPoint = null;
-Person person = new Person();
+//Person person = new Person();
+//var point = new Point();
+
 Console.ReadKey();
 
 //void SomeMethod<T>(T param) where T : class
@@ -132,6 +134,7 @@ struct Point
 {
 	public int X { get; set; }
 	public int Y { get; set; }
+
 
 	public Point(int x, int y)
 	{
@@ -148,8 +151,16 @@ struct Point
 
 class Person
 {
-	private Point _favoritePoint;
-	private Person _favoritePerson;
+	//private Point _favoritePoint;
+	//private Person _favoritePerson;
+	public Person ClosestPoint { get; }
 	public int Id { get; init; }
 	public string Name { get; init; }
+
+	public Person(int id, string name)
+	{
+		Id = id;
+		Name = name;
+
+	}
 }
